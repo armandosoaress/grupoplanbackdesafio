@@ -118,10 +118,10 @@ class ProdutoController extends Controller
 
         try {
             $produto = new Produto();
-            $produto->nome = $request->produto['nome'];
-            $produto->descricao =  $request->produto['descricao'];
-            $produto->tensao =  $request->produto['tensao'];
-            $produto->marca =  $request->produto['marca'];
+            $produto->nome = $request->nome;
+            $produto->descricao =  $request->descricao;
+            $produto->tensao =  $request->tensao;
+            $produto->marca =  $request->marca;
             $produto->save();
             return response()->json([
                 "status" => "produto cadastrado com sucesso",
@@ -173,12 +173,12 @@ class ProdutoController extends Controller
             $produto->marca = $request->marca;
             $produto->save();
             return response()->json([
-                "status" => "Produto editado com sucesso",
+                "status" => " editado com sucesso",
                 "cargo" => $produto
             ], 200);
         } catch (\Throwable $erro) {
             return response()->json([
-                "error" => "erro desconhecido"
+                "error" => "Eletronico não encontrado"
             ], 500);
         }
     }
